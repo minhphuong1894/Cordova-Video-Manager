@@ -1,0 +1,63 @@
+/* Reset some default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Professional Header Styling */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 15px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .back-button {
+    position: absolute;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #007aff;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.2s ease;
+  }
+  
+  .back-button:hover {
+    color: #005bb5;
+  }
+  
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Container styling */
+  .container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Video styling */
+  video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #000;
+  }
+  

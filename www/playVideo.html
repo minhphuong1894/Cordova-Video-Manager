@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Play Video</title>
+  <link rel="stylesheet" href="css/playVideo.css">
+</head>
+<body>
+  <header class="header">
+    <button class="back-button" onclick="goBack()">
+      &#8592; Back
+    </button>
+    <h1 class="title">Video Player</h1>
+  </header>
+  <div class="container">
+    <video id="videoPlayer" controls>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    // Navigate back to the previous page.
+    function goBack() {
+      window.history.back();
+    }
+
+    // Helper function to get query parameters from the URL.
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Extract the videoURI from the URL query string.
+    const videoURI = getQueryParam('videoURI');
+
+    if (videoURI) {
+      const videoPlayer = document.getElementById('videoPlayer');
+      videoPlayer.src = videoURI;
+      videoPlayer.load();
+
+      // Auto-play the video once it's ready.
+      videoPlayer.addEventListener('canplay', function() {
+        videoPlayer.play().catch((error) => {
+          console.error('Auto-play prevented:', error);
+        });
+      });
+    } else {
+      document.body.innerHTML = '<p>Error: No video URI provided.</p>';
+    }
+  </script>
+</body>
+</html>
